@@ -126,7 +126,7 @@ jobs:
       if: false
       uses: pragmatrix/release-action@v1.11.1-rs
       with:
-        owner: rust-skia
+        owner: mllw
         repo: skia-binaries
         allowUpdates: true
         replacesArtifacts: true
