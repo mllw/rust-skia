@@ -138,6 +138,17 @@ jobs:
         if [ "${{ matrix.androidEnv }}" == "true" ]; then
           TARGET=${{ matrix.target }}
           TARGET=${TARGET//-/_}
+
+          # 修正编译器名称映射
+          case "${{ matrix.target }}" in
+            arm-linux-androideabi)
+              CLANG_TARGET="armv7a-linux-androideabi"
+              ;;
+            *)
+              CLANG_TARGET="${{ matrix.target }}"
+              ;;
+          esac
+
           export CC_${TARGET}=${{ matrix.target }}26-clang
           export CXX_${TARGET}=${{ matrix.target }}26-clang++
           export AR_${TARGET}=llvm-ar
