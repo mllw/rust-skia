@@ -102,6 +102,14 @@ jobs:
             features: 'gl,svg,textlayout,wayland,x11'
           - target: arm-linux-androideabi
             features: 'egl,gl,svg,textlayout,vulkan,wayland,webp,x11'
+          - target: arm-linux-androideabi
+            features: 'vulkan'
+          - target: arm-linux-androideabi
+            features: 'textlayout,vulkan'
+          - target: arm-linux-androideabi
+            features: 'gl,textlayout,vulkan'
+          - target: arm-linux-androideabi
+            features: 'svg,textlayout,vulkan,webp'
 
     runs-on: ubuntu-22.04
     container: ghcr.io/pragmatrix/rust-skia-linux:latest
