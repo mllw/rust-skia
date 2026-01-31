@@ -149,8 +149,8 @@ jobs:
               ;;
           esac
 
-          export CC_${TARGET}=${{ CLANG_TARGET }}26-clang
-          export CXX_${TARGET}=${{ CLANG_TARGET }}26-clang++
+          export CC_${TARGET}=${CLANG_TARGET}26-clang
+          export CXX_${TARGET}=${CLANG_TARGET}26-clang++
           export AR_${TARGET}=llvm-ar
           TARGET_UPPERCASE=`echo "${TARGET}" | tr [a-z] [A-Z]`
           export CARGO_TARGET_${TARGET_UPPERCASE}_LINKER=${{ matrix.target }}26-clang
